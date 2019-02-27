@@ -40,9 +40,18 @@ button {
 }
 
 small {
-  color: gainsboro;
   font-size: 9px;
   display: block;
   margin: 0 auto 2px auto;
   text-align: right;
+}
+
+a {
+  color: gainsboro;
+  text-decoration: none;
+}
+
+a:hover {
+  color: whitesmoke;
+  text-decoration-line: underline;
 }
