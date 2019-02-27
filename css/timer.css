@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "DSEG14Classic-Light";
+  src: url("../fonts/DSEG14-Classic/DSEG14Classic-Light.woff2") format("woff2"),
+       url("../fonts/DSEG14-Classic/DSEG14Classic-Light.woff") format("woff");
+}
+
+.outline {
+  align-items: center;
+  background-color: #013CA6;
+  border-radius: 50%;
+  display: flex;
+  height: 500px;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+  width: 500px;
+}
+
+p {
+  background-color: azure;
+  border: solid 2px gray;
+  border-radius: 15px;
+  font-family: DSEG14Classic-Light;
+  font-size: 70px;
+  line-height: 100px;
+  height: 100px;
+  margin: 0 auto 10px auto;
+  text-align: center;
+  width: 380px;
+}
+
+button {
+  height: 70px;
+  width: 70px;
+}
