@@ -29,7 +29,7 @@ p {
   font-size: 70px;
   line-height: 100px;
   height: 100px;
-  margin: 0 auto 10px auto;
+  margin: 0 auto;
   text-align: center;
   width: 380px;
 }
@@ -37,4 +37,12 @@ p {
 button {
   height: 70px;
   width: 70px;
+}
+
+small {
+  color: gainsboro;
+  font-size: 9px;
+  display: block;
+  margin: 0 auto 2px auto;
+  text-align: right;
 }
