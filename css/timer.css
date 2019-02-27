@@ -55,3 +55,11 @@ a:hover {
   color: whitesmoke;
   text-decoration-line: underline;
 }
+
+.control {
+  margin-top: 12px;
+}
+
+.control button {
+  height: 20px;
+}
