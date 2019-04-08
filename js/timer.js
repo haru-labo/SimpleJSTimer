@@ -15,12 +15,24 @@ function start() {
   //タイマー開始
   countdownTimer = setInterval(countdown, 1000);
   document.getElementById('btnStart').disabled = "true";
+  //時刻変更ボタンは非活性に
+  document.getElementById('btnPlusMin').disabled = "true";
+  document.getElementById('btnMinusMin').disabled = "true";
+  document.getElementById('btnPlusSec').disabled = "true";
+  document.getElementById('btnMinusSec').disabled = "true";
 }
 
 //ストップ
 function stop() {
   clearInterval(countdownTimer);
   document.getElementById('btnStart').disabled = "";
+  document.getElementById('btnPlusMin').disabled = "";
+  document.getElementById('btnMinusMin').disabled = "";
+  document.getElementById('btnPlusSec').disabled = "";
+  document.getElementById('btnMinusSec').disabled = "";
+  //現在の表示値をユーザー設定時刻にセット
+  setMinute = Number(document.getElementById('minute').textContent);
+  setSeconds = Number(document.getElementById('seconds').textContent);
 }
 
 //リセット
@@ -33,7 +45,13 @@ function reset() {
     document.getElementById('time').style.color = defColor;
   }
   display(defMinute,defSeconds);
+  //全てのボタンを活性
   document.getElementById('btnStart').disabled = "";
+  document.getElementById('btnStop').disabled = "";
+  document.getElementById('btnPlusMin').disabled = "";
+  document.getElementById('btnMinusMin').disabled = "";
+  document.getElementById('btnPlusSec').disabled = "";
+  document.getElementById('btnMinusSec').disabled = "";
 }
 
 //+1Min
@@ -66,10 +84,13 @@ function plusSec() {
 
 //-1Sec
 function minusSec() {
-  if(setSeconds > 0) {
+  if(setSeconds === 0 && setMinute > 0) {
+    setMinute--;
+    setSeconds = 59;
+  } else if(setSeconds > 0) {
     setSeconds--;
-    display(setMinute, setSeconds);
   }
+  display(setMinute, setSeconds);
 }
 
 
@@ -102,6 +123,13 @@ function timeUp() {
   defInnerHTML = document.getElementById('time').innerHTML;
   document.getElementById('time').textContent = 'Time Up';
   document.getElementById('time').style.color = 'red';
+
+  //リセット以外のボタンをdisableに
+  document.getElementById('btnStop').disabled = "true";
+  document.getElementById('btnPlusMin').disabled = "true";
+  document.getElementById('btnMinusMin').disabled = "true";
+  document.getElementById('btnPlusSec').disabled = "true";
+  document.getElementById('btnMinusSec').disabled = "true";
 }
 
 //画面描画
