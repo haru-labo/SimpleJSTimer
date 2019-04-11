@@ -14,22 +14,22 @@ let setSeconds = defSeconds;
 function start() {
   //タイマー開始
   countdownTimer = setInterval(countdown, 1000);
-  document.getElementById('btnStart').disabled = "true";
+  document.getElementById('btnStart').disabled = true;
   //時刻変更ボタンは非活性に
-  document.getElementById('btnPlusMin').disabled = "true";
-  document.getElementById('btnMinusMin').disabled = "true";
-  document.getElementById('btnPlusSec').disabled = "true";
-  document.getElementById('btnMinusSec').disabled = "true";
+  document.getElementById('btnPlusMin').disabled = true;
+  document.getElementById('btnMinusMin').disabled = true;
+  document.getElementById('btnPlusSec').disabled = true;
+  document.getElementById('btnMinusSec').disabled = true;
 }
 
 //ストップ
 function stop() {
   clearInterval(countdownTimer);
-  document.getElementById('btnStart').disabled = "";
-  document.getElementById('btnPlusMin').disabled = "";
-  document.getElementById('btnMinusMin').disabled = "";
-  document.getElementById('btnPlusSec').disabled = "";
-  document.getElementById('btnMinusSec').disabled = "";
+  document.getElementById('btnStart').disabled = false;
+  document.getElementById('btnPlusMin').disabled = false;
+  document.getElementById('btnMinusMin').disabled = false;
+  document.getElementById('btnPlusSec').disabled = false;
+  document.getElementById('btnMinusSec').disabled = false;
   //現在の表示値をユーザー設定時刻にセット
   setMinute = Number(document.getElementById('minute').textContent);
   setSeconds = Number(document.getElementById('seconds').textContent);
@@ -46,12 +46,12 @@ function reset() {
   }
   display(defMinute,defSeconds);
   //全てのボタンを活性
-  document.getElementById('btnStart').disabled = "";
-  document.getElementById('btnStop').disabled = "";
-  document.getElementById('btnPlusMin').disabled = "";
-  document.getElementById('btnMinusMin').disabled = "";
-  document.getElementById('btnPlusSec').disabled = "";
-  document.getElementById('btnMinusSec').disabled = "";
+  document.getElementById('btnStart').disabled = false;
+  document.getElementById('btnStop').disabled = false;
+  document.getElementById('btnPlusMin').disabled = false;
+  document.getElementById('btnMinusMin').disabled = false;
+  document.getElementById('btnPlusSec').disabled = false;
+  document.getElementById('btnMinusSec').disabled = false;
 }
 
 //+1Min
@@ -125,11 +125,11 @@ function timeUp() {
   document.getElementById('time').style.color = 'red';
 
   //リセット以外のボタンをdisableに
-  document.getElementById('btnStop').disabled = "true";
-  document.getElementById('btnPlusMin').disabled = "true";
-  document.getElementById('btnMinusMin').disabled = "true";
-  document.getElementById('btnPlusSec').disabled = "true";
-  document.getElementById('btnMinusSec').disabled = "true";
+  document.getElementById('btnStop').disabled = true;
+  document.getElementById('btnPlusMin').disabled = true;
+  document.getElementById('btnMinusMin').disabled = true;
+  document.getElementById('btnPlusSec').disabled = true;
+  document.getElementById('btnMinusSec').disabled = true;
 }
 
 //画面描画
